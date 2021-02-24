@@ -175,7 +175,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-21 22:52:58" itemprop="dateModified" datetime="2021-02-21T22:52:58-08:00">2021-02-21</time>
+                <time title="修改时间：2021-02-24 01:31:00" itemprop="dateModified" datetime="2021-02-24T01:31:00-08:00">2021-02-24</time>
               </span>
 
           
@@ -192,7 +192,7 @@
           <h1 id="Design-board4fun-Website"><a href="#Design-board4fun-Website" class="headerlink" title="Design - board4fun Website"></a>Design - board4fun Website</h1><h2 id="Repo"><a href="#Repo" class="headerlink" title="Repo"></a>Repo</h2><p><a target="_blank" rel="noopener" href="https://github.com/tracyhanke/board4fun">github repo</a></p>
 <h2 id="Overall-Target"><a href="#Overall-Target" class="headerlink" title="Overall Target"></a>Overall Target</h2><p>Build a website that supports multi-player playing board games in an anonymous and real-time fashion. Users can simply select a board game to start or enter a game room link/id to join others.</p>
 <h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ol>
-<li>Support board game ‘draw &amp; guess’:<ul>
+<li>Support board game ‘U Draw I Guess’:<ul>
 <li>Implement real-time draw/display functionality at drawer/guesser side.</li>
 <li>Implement guessing functionality at backend, check guesser’s answer is correct or not.</li>
 <li>Implement game rules to add proper VPs to drawer/guesser.</li>
@@ -205,23 +205,42 @@
 <li>&lt;to be added&gt;</li>
 </ul>
 </li>
+<li>Support board game ‘twilight struggle’:<ul>
+<li>&lt;to be added&gt;</li>
+</ul>
+</li>
 </ol>
 <h2 id="Tech-Stack"><a href="#Tech-Stack" class="headerlink" title="Tech Stack"></a>Tech Stack</h2><hr>
+<h3 id="Basic-Workflow"><a href="#Basic-Workflow" class="headerlink" title="Basic Workflow"></a>Basic Workflow</h3><ul>
+<li>user input</li>
+<li>based on input interaction, ajax sends out corresponding request</li>
+<li>server receives request, reacts correspondingly, broadcasts response (if any)</li>
+<li>client receives response, ajax partially/fully reload webpage</li>
+<li>repeat</li>
+</ul>
+<hr>
 <h3 id="UX"><a href="#UX" class="headerlink" title="UX"></a>UX</h3><ul>
 <li>no idea at all :(</li>
 </ul>
 <hr>
 <h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><ul>
-<li>html5 as static webpage base</li>
-<li>&lt;canvas&gt; for drawing functionality</li>
-<li>js as programmatic language for client, embedded into webpage</li>
+<li>html5 as static webpage language</li>
+<li>css as style language, bootstrap library is used</li>
+<li>js as programmatic language for client, multiple libraries are used:<ul>
+<li><code>jQuery</code> to select html/css elements</li>
+<li><code>ajax</code> to send request, and udpate html page based on response</li>
+</ul>
+</li>
 </ul>
 <hr>
 <h3 id="Backend"><a href="#Backend" class="headerlink" title="Backend"></a>Backend</h3><hr>
 <ul>
-<li>REST API design, use swagger.io</li>
-<li>(TBD) js as programmatic language for server, use websocket/socket.io package for communication b/w client/server</li>
-<li>(TBD) golang as programmatic language for server</li>
+<li>REST API design, based on websocket/http protocol</li>
+<li>js as programmatic language for server, multiple libraries are used:<ul>
+<li><code>express</code> to route and serve http request</li>
+<li><code>socket.io</code> to establish websocket connection and manage communication</li>
+</ul>
+</li>
 <li>mysql/sqlite as database (or use some nosql key/value storage?)</li>
 </ul>
 
